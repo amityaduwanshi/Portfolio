@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion as m, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { useTheme } from '../context/ThemeContext'
 
@@ -56,7 +56,7 @@ export default function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) 
       {isOpen && (
         <>
           {/* Backdrop */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -65,7 +65,7 @@ export default function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) 
           />
           
           {/* Menu */}
-          <motion.div
+          <m.div
             initial="closed"
             animate="open"
             exit="closed"
@@ -73,12 +73,12 @@ export default function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) 
             className="fixed top-16 left-0 right-0 bg-white dark:bg-dark-100 shadow-lg z-50 overflow-hidden"
           >
             <div className="container mx-auto px-4 py-6">
-              <motion.div
+              <m.div
                 variants={menuVariants}
                 className="flex flex-col space-y-6"
               >
                 {links.map((link, index) => (
-                  <motion.div
+                  <m.div
                     key={link.href}
                     variants={itemVariants}
                     custom={index}
@@ -90,9 +90,9 @@ export default function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) 
                     >
                       {link.label}
                     </Link>
-                  </motion.div>
+                  </m.div>
                 ))}
-                <motion.div variants={itemVariants} custom={links.length}>
+                <m.div variants={itemVariants} custom={links.length}>
                   <Link
                     href="/contact"
                     onClick={onClose}
@@ -100,10 +100,10 @@ export default function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) 
                   >
                     Contact
                   </Link>
-                </motion.div>
-              </motion.div>
+                </m.div>
+              </m.div>
             </div>
-          </motion.div>
+          </m.div>
         </>
       )}
     </AnimatePresence>

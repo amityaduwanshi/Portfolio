@@ -164,7 +164,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
                 Print
               </button>
               <button
-                onClick={() => window.location.href = `mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(window.location.href)}`}
+                onClick={() => window.location.href = `mailto:amit@yaduwanshi.com?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(window.location.href)}`}
                 className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
                 aria-label="Share via email"
               >

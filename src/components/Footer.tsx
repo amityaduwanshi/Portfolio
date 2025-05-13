@@ -12,9 +12,9 @@ export default function Footer() {
               Enterprise Architect specializing in cloud architecture, system design, and digital transformation.
             </p>
             <div className="mt-3">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-primary-600 to-blue-500 text-white text-xs font-semibold shadow animate-pulse">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" /></svg>
-                AI Enabled | Rapid Development | Technology No Bar
+              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gradient-to-r from-primary-600 to-blue-500 text-white text-sm font-semibold shadow animate-pulse">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" /></svg>
+                AI Driven Rapid Development | Technology Doesn't Matter
               </span>
             </div>
           </div>
@@ -50,7 +50,15 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4 text-gray-900 dark:text-white">Resources</h4>
             <ul className="space-y-2">
-              {navItems.filter(item => ['About', 'Blog', 'Case Studies', 'Products', 'Resources'].includes(item.label)).map(item => (
+              <li>
+                <Link 
+                  href="/about" 
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                >
+                  About
+                </Link>
+              </li>
+              {navItems.filter(item => ['Blog', 'Case Studies', 'Products', 'Resources'].includes(item.label)).map(item => (
                 <li key={item.href}>
                   <Link 
                     href={item.href} 
@@ -77,10 +85,10 @@ export default function Footer() {
               ))}
               <li>
                 <a 
-                  href="mailto:amit@example.com" 
+                  href="mailto:amit@yaduwanshi.com" 
                   className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                 >
-                  amit@example.com
+                  amit@yaduwanshi.com
                 </a>
               </li>
               <li>
